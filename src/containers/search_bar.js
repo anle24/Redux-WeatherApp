@@ -23,7 +23,7 @@ class SearchBar extends Component {
     event.preventDefault();
 
     // We need to go and fetch weather data
-    console.log('HELLOOOO??', this.state.term);
+    console.log('onFormSubmit:', this.state.term);
     this.props.fetchWeather(this.state.term);
     this.setState({ term: '' }); // clearing input
   }
@@ -32,7 +32,7 @@ class SearchBar extends Component {
     return (
       <form onSubmit={this.onFormSubmit} className="input-group">
         <input
-          placeholder="Get a five-day forecast in your favorite cities"
+          placeholder="Get a five-day forecast in your favorite US cities"
           className="form-control"
           value={this.state.term}
           onChange={this.onInputChange}
